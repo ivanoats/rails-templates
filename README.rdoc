@@ -1,21 +1,26 @@
-To use these generator templates I recommend adding this function to your bash profile.
+=Sustainable Websites Rails Application Template
 
-  function railsapp {
-    template=$1
-    appname=$2
-    shift 2
-    rails $appname -m http://github.com/ryanb/rails-templates/raw/master/$template.rb $@
-  }
+A rails app generator that gives you some nice stuff:
+  rspec
+  cucumber
+  webrat
+  seachlogic
+  formtastic
+  factory-girl
+  will_paginate
+  haml
+  authlogic
 
-You can then use this "railsapp" command instead of the traditional "rails" one. Simply pass the template name as the first argument:
+And a choice between two theme styles:
+  web-app-theme
+  nifty-generators
 
-  railsapp base store
-
-That will generate a Rails app using the base.rb template found here.
+==Notes
+does not install the gems for you yet - use rake gems:install
 
 --
 
-Copyright (c) 2008 Ryan Bates
+Copyright (c) 2010 Ivan Storck
  
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

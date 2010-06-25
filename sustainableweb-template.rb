@@ -15,10 +15,10 @@ generate :rspec
 generate :cucumber
 
 #bootstrap authentication
-generate :session "user_session"
-generate :rspec_model "user"
+#generate :session "user_session"
+#generate :rspec_model "user"
 # TODO set up the model as in step 4 of github.com/binarylogic/authlogic_example
-generate :controller "user_sessions"
+#generate :controller "user_sessions"
 # TODO steps 5 6 7 and 8
 
 #layout
@@ -27,7 +27,7 @@ if layout == "n" then
   gem 'nifty-generators'
   generate :nifty_layout
 elsif layout == "w" then
-  gem 'web-app-theme'
+  gem 'web-app-theme', :lib => false
   generate :theme, "--engine = haml"
 else
   exit
@@ -36,10 +36,12 @@ end
 # version control
 git :init
 
+run "rm README"
 run "echo 'TODO add readme content' > README.mdown"
 run "touch tmp/.gitignore log/.gitignore vendor/.gitignore"
 run "cp config/database.yml config/example_database.yml"
 run "rm public/index.html"
+
 
 file ".gitignore", <<-END
 log/*.log
